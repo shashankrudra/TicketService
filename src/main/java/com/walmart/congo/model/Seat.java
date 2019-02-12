@@ -4,7 +4,7 @@ import com.walmart.congo.AppConstants;
 import com.walmart.congo.exception.InvalidUserInputException;
 
 // immutable class
-public final class Seat {
+public final class Seat extends AbstractEntity {
 	private final int row;
 	private final char rowChar;
 	private final int column;

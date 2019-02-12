@@ -14,4 +14,10 @@ public final class AppConstants {
 	public static final String SEAT_RANGE_MSG = "Valid seat range is A1 to T40";
 	public static final String INVALID_SEAT_INPUT_MSG = "Seat input is not correct. It is beyond supported range.";
 
+	public static final String DATA_SEPARATOR_COMMA = ",";
+	public static final String INVALID_ENTITY_MESSAGE = "Invalid entity sent. %s was expected.";
+
+	public static final String VALIDATE_EMPTY = "  Please enter a non-empty value";
+	public static final String INVALID_INT_ARG = "  Please enter a valid integer value";
+
 }

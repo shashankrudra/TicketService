@@ -1,0 +1,8 @@
+- make seat class more generic
+to allow any seating pattern
+currently works and validates based on A1 to A40 : T1 to T40
+
+--think to introduce inheretance in classes 
+to make it extendable
+
+--

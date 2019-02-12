@@ -1,9 +1,11 @@
 package com.walmart.congo.model;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class Customer {
+public class Customer extends AbstractEntity {
 	// for DB purpose, auto generated
 	// not used for this POC;
 	private String id;
@@ -23,6 +25,10 @@ public class Customer {
 
 		// default it to empty for now
 		this.id = "";
+	}
+
+	public Customer(List<String> fields) {
+		this(fields.get(0), fields.get(1), fields.get(2));
 	}
 
 	public Customer copy() {

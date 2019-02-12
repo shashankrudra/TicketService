@@ -3,7 +3,7 @@ package com.walmart.congo.model;
 import java.time.LocalDateTime;
 
 // immutable class
-public final class Event {
+public final class Event extends AbstractEntity {
 	private final String eventName;
 	private final LocalDateTime beginDateTime;
 	private final LocalDateTime endDateTime;
