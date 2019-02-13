@@ -1,40 +1,29 @@
 package com.walmart.congo.service;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-@Disabled
 class TicketServiceTest {
 
-	private TicketService ticketService;
+	private static TicketService ticketService;
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
-	@BeforeEach
-	void init() {
+	@BeforeAll
+	static void init() {
 		ticketService = new TicketServiceImpl();
 	}
 
-	@DisplayName("Test TicketService")
-	@Test
-	void testBasicSalaryWithInValidSalary() {
-
-		assertThrows(IllegalArgumentException.class, () -> {
-		});
-
+	@ParameterizedTest(name = "{index} => emailId={0}, eventName={1}, beginDateTime={2}, endDateTime={2}, numberOfSeats={3}")
+	@CsvFileSource(resources = "/booking-requests.csv")
+	public void loadRepository(String emailId, String eventName, String beignDateTime, String endDateTime,
+			int numberOfSeats) {
+		ticketService.findAndHoldSeats(numberOfSeats, emailId);
+		System.out.println(emailId);
 	}
 
-	@AfterEach
-	void tearDown() {
+	@AfterAll
+	static void tearDown() {
 		ticketService = null;
 	}
 
