@@ -24,7 +24,7 @@ class TicketServiceTest {
 		ticketService = new TicketServiceImpl();
 	}
 
-	@DisplayName("Test BasicSalaryCalculator with invalid salary")
+	@DisplayName("Test TicketService")
 	@Test
 	void testBasicSalaryWithInValidSalary() {
 
